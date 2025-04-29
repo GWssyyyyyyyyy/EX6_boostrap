@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spirited Away</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="bg-light">
+
+<div class="container my-5">
+    <div class="jumbotron bg-warning text-center">
+        <h1 class="display-4"><i class="fas fa-dragon"></i> Spirited Away <i class="fas fa-magic"></i></h1>
+        <p class="lead">A Studio Ghibli masterpiece by Hayao Miyazaki</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 border-primary">
+                <img id="mainImage" src="assets/千与千寻.jpg" alt="Spirited Away" class="card-img-top">
+                <div class="card-body">
+                    <div class="btn-group btn-group-lg d-flex">
+                        <button id="descriptionBtn" class="btn btn-primary flex-fill">
+                            <i class="fas fa-book-open"></i> Description
+                        </button>
+                        <button id="castBtn" class="btn btn-success flex-fill">
+                            <i class="fas fa-users"></i> Cast
+                        </button>
+                        <button id="triviaBtn" class="btn btn-info flex-fill">
+                            <i class="fas fa-lightbulb"></i> Trivia
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6 mb-4">
+            <div class="card h-100 border-danger">
+                <div class="card-header bg-danger text-white">
+                    <h3 class="card-title mb-0">Movie Information</h3>
+                </div>
+                <div class="card-body">
+                    <div id="description" class="text-justify">
+                        <h4 class="text-primary">Description</h4>
+                        <p>Spirited Away tells the story of Chihiro, a young girl who finds herself trapped in a mysterious and magical world of spirits. To return to the human world, she must work in a bathhouse for the spirits and find her inner strength.</p>
+                        <div class="alert alert-warning">
+                            <strong><i class="fas fa-award"></i> Award Winner:</strong> Academy Award for Best Animated Feature (2003)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-12">
+            <div class="card border-success">
+                <div class="card-header bg-success text-white">
+                    <h3 class="mb-0">Quick Facts</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row text-center">
+                        <div class="col-md-3">
+                            <div class="p-3 bg-light rounded">
+                                <i class="fas fa-calendar-alt fa-2x text-primary"></i>
+                                <h5>Release Year</h5>
+                                <p>2001</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="p-3 bg-light rounded">
+                                <i class="fas fa-clock fa-2x text-info"></i>
+                                <h5>Duration</h5>
+                                <p>125 minutes</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="p-3 bg-light rounded">
+                                <i class="fas fa-globe-asia fa-2x text-danger"></i>
+                                <h5>Country</h5>
+                                <p>Japan</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="p-3 bg-light rounded">
+                                <i class="fas fa-star fa-2x text-warning"></i>
+                                <h5>Rating</h5>
+                                <p>8.6/10 (IMDb)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const mainImage = document.getElementById('mainImage');
+    const description = document.getElementById('description');
+
+    document.getElementById('descriptionBtn').onclick = function() {
+        description.innerHTML = `
+            <h4 class="text-primary">Description</h4>
+            <p>Spirited Away tells the story of Chihiro, a young girl who finds herself trapped in a mysterious and magical world of spirits. To return to the human world, she must work in a bathhouse for the spirits and find her inner strength.</p>
+            <div class="alert alert-warning">
+                <strong><i class="fas fa-award"></i> Award Winner:</strong> Academy Award for Best Animated Feature (2003)
+            </div>
+        `;
+    };
+
+    document.getElementById('castBtn').onclick = function() {
+        description.innerHTML = `
+            <h4 class="text-success">Main Cast</h4>
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Chihiro Ogino
+                    <span class="badge badge-primary badge-pill">Rumi Hiiragi</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Haku
+                    <span class="badge badge-primary badge-pill">Miyu Irino</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Yubaba/Zeniba
+                    <span class="badge badge-primary badge-pill">Mari Natsuki</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Kamaji
+                    <span class="badge badge-primary badge-pill">Bunta Sugawara</span>
+                </li>
+            </ul>
+            <div class="alert alert-info mt-3">
+                <i class="fas fa-info-circle"></i> The Japanese voice cast features many renowned actors.
+            </div>
+        `;
+    };
+
+    document.getElementById('triviaBtn').onclick = function() {
+        description.innerHTML = `
+            <h4 class="text-info">Trivia</h4>
+            <div class="alert alert-info">
+                <strong><i class="fas fa-trophy"></i> Historic Achievement:</strong> It is the only non-English language film to win the Academy Award for Best Animated Feature.
+            </div>
+            <div class="alert alert-secondary">
+                <strong><i class="fas fa-pencil-alt"></i> Unique Production:</strong> The movie was made without a script; Hayao Miyazaki made storyboards as he drew the storyboard.
+            </div>
+            <div class="alert alert-warning">
+                <strong><i class="fas fa-globe"></i> Global Success:</strong> Became the highest-grossing film in Japanese history, a record it held for 19 years.
+            </div>
+        `;
+    };
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
